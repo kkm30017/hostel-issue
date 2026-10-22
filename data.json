@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Warden Sharma",
+      "email": "admin@nmims.in",
+      "role": "admin",
+      "salt": "a1f3c9d27b4e8056c1d2e3f4a5b60718",
+      "passwordHash": "b5a5c6ff6b031a2d8b60ea7b8214c5815f9a7048f4cf86af24696ef41321457f"
+    },
+    {
+      "id": 2,
+      "name": "Ananya Rao",
+      "email": "ananya@nmims.in",
+      "role": "student",
+      "salt": "b2e4d0a38c5f9167d2e3f4a5b6c71829",
+      "passwordHash": "a72482cd5ddbc0c0c3a14a019b382671d53e46343b75df4a93f2e8fbd7115e91"
+    },
+    {
+      "id": 3,
+      "name": "Karan Shah",
+      "email": "karan@nmims.in",
+      "role": "student",
+      "salt": "c3f5e1b49d60a278e3f4a5b6c7d8293a",
+      "passwordHash": "50495083d8c03e4c4a53f3c4b3fe0c69ba9a312efbd5e7fc234356176835d53b"
+    },
+    {
+      "id": 4,
+      "name": "Meera Iyer",
+      "email": "meera@nmims.in",
+      "role": "student",
+      "salt": "d4a6f2c5ae71b389f4a5b6c7d8e93a4b",
+      "passwordHash": "c45c4760459d5eff9967b887385b6afb3748834780795162e0619d7f4929e494"
+    },
+    {
+      "id": 5,
+      "name": "Rahul Verma",
+      "email": "rahul@nmims.in",
+      "role": "student",
+      "salt": "e5b7a3d6bf82c49aa5b6c7d8e9fa4b5c",
+      "passwordHash": "f90b872ecedef08a96e11f3ccf2916ee90640eba3e5daedbfa873d8de6257e38"
+    },
+    {
+      "id": 6,
+      "name": "Sana Khan",
+      "email": "sana@nmims.in",
+      "role": "student",
+      "salt": "f6c8b4e7c093d5abb6c7d8e9fa0b5c6d",
+      "passwordHash": "35d09865f638d6fd2835932e893b62079fe21f70e15a0d453b90e17aa0c85860"
+    },
+    {
+      "id": 7,
+      "name": "Isha Patel",
+      "email": "isha@nmims.in",
+      "role": "student",
+      "salt": "07d9c5f8d1a4e6bcc7d8e9fa0b1c6d7e",
+      "passwordHash": "a03210fda1cdebe2a76e38ce60373c3e61c1e29bb24292795deb956697fed60a"
+    }
+  ],
+  "issues": [
+    {
+      "id": 1,
+      "title": "No hot water in the morning",
+      "category": "Water",
+      "hostel": "girls",
+      "block": "A",
+      "room": "214",
+      "priority": "high",
+      "description": "The geyser on the second floor has not been giving hot water since Monday. It stays cold from 6 am to 9 am.",
+      "reportedBy": "Ananya Rao",
+      "reportedById": 2,
+      "status": "open",
+      "createdAt": "2026-10-12T07:30:00.000Z",
+      "resolvedAt": null
+    },
+    {
+      "id": 2,
+      "title": "WiFi keeps disconnecting at night",
+      "category": "WiFi",
+      "hostel": "boys",
+      "block": "B",
+      "room": "108",
+      "priority": "normal",
+      "description": "The connection drops every few minutes after 10 pm, which makes online lectures and assignment uploads difficult.",
+      "reportedBy": "Karan Shah",
+      "reportedById": 3,
+      "status": "in-progress",
+      "createdAt": "2026-10-10T16:10:00.000Z",
+      "resolvedAt": null
+    },
+    {
+      "id": 3,
+      "title": "Broken tube light in corridor",
+      "category": "Electricity",
+      "hostel": "girls",
+      "block": "A",
+      "room": "301",
+      "priority": "low",
+      "description": "The tube light outside room 301 has been flickering for a week and now does not turn on at all.",
+      "reportedBy": "Meera Iyer",
+      "reportedById": 4,
+      "status": "resolved",
+      "createdAt": "2026-10-05T19:45:00.000Z",
+      "resolvedAt": "2026-10-07T11:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Mess food served cold at dinner",
+      "category": "Mess",
+      "hostel": "boys",
+      "block": "C",
+      "room": "120",
+      "priority": "normal",
+      "description": "Dinner has been served cold for the last three days, mostly after 8:30 pm. Please check the serving schedule.",
+      "reportedBy": "Rahul Verma",
+      "reportedById": 5,
+      "status": "open",
+      "createdAt": "2026-10-13T20:55:00.000Z",
+      "resolvedAt": null
+    },
+    {
+      "id": 5,
+      "title": "Washroom floor not cleaned",
+      "category": "Cleaning",
+      "hostel": "girls",
+      "block": "B",
+      "room": "212",
+      "priority": "high",
+      "description": "The washroom on the second floor has not been cleaned for two days and the floor is slippery.",
+      "reportedBy": "Sana Khan",
+      "reportedById": 6,
+      "status": "in-progress",
+      "createdAt": "2026-10-14T09:20:00.000Z",
+      "resolvedAt": null
+    },
+    {
+      "id": 6,
+      "title": "Window latch broken",
+      "category": "Maintenance",
+      "hostel": "girls",
+      "block": "C",
+      "room": "305",
+      "priority": "normal",
+      "description": "The window latch in my room is broken and the window does not close properly during rain.",
+      "reportedBy": "Isha Patel",
+      "reportedById": 7,
+      "status": "resolved",
+      "createdAt": "2026-10-01T12:00:00.000Z",
+      "resolvedAt": "2026-10-04T15:30:00.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Plug point sparking in room",
+      "category": "Electricity",
+      "hostel": "boys",
+      "block": "B",
+      "room": "115",
+      "priority": "high",
+      "description": "The plug point next to my study table sparks when a charger is connected. It needs to be checked soon.",
+      "reportedBy": "Rahul Verma",
+      "reportedById": 5,
+      "status": "open",
+      "createdAt": "2026-10-15T08:05:00.000Z",
+      "resolvedAt": null
+    }
+  ]
+}

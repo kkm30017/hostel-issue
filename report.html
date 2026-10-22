@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report an issue | Hostel Issue Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="report">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Hostel Issue Tracker</a>
+      <nav id="main-nav" aria-label="Main"></nav>
+    </div>
+  </header>
+
+  <main id="page" hidden>
+    <h1 id="page-title">Report an issue</h1>
+    <p class="lead" id="reporting-as"></p>
+    <p class="hint" id="edit-note" hidden></p>
+
+    <form id="report-form" class="form-card" novalidate>
+
+      <fieldset>
+        <legend>Which hostel?</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="hostel" value="boys"> Boys hostel</label>
+          <label><input type="radio" name="hostel" value="girls"> Girls hostel</label>
+        </div>
+        <p class="error-msg" id="err-hostel"></p>
+      </fieldset>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="block">Block</label>
+          <select id="block" name="block">
+            <option value="">Choose a block</option>
+            <option value="A">Block A</option>
+            <option value="B">Block B</option>
+            <option value="C">Block C</option>
+          </select>
+          <p class="error-msg" id="err-block"></p>
+        </div>
+        <div class="field">
+          <label for="room">Room number</label>
+          <input type="text" id="room" name="room" inputmode="numeric" maxlength="3" placeholder="214">
+          <p class="error-msg" id="err-room"></p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category" name="category"></select>
+        <p class="error-msg" id="err-category"></p>
+      </div>
+
+      <fieldset>
+        <legend>How urgent is it?</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="priority" value="low"> Low</label>
+          <label><input type="radio" name="priority" value="normal" checked> Normal</label>
+          <label><input type="radio" name="priority" value="high"> High</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="title">Short title</label>
+        <input type="text" id="title" name="title" maxlength="80" placeholder="Example: No hot water in the morning">
+        <p class="error-msg" id="err-title"></p>
+      </div>
+
+      <div class="field">
+        <label for="description">What is the problem?</label>
+        <p class="hint">Be specific: say what is wrong and since when. Links, repeated words and random typing are rejected.</p>
+        <textarea id="description" name="description" maxlength="500"></textarea>
+        <p class="hint" id="char-count">0 / 500</p>
+        <p class="error-msg" id="err-description"></p>
+      </div>
+
+      <p class="error-msg" id="form-error"></p>
+      <button type="submit" class="btn btn-primary" id="submit-btn">Submit issue</button>
+    </form>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="api.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Safety net: if a script file is missing or is an OLD copy, say so
+    // instead of showing a blank page.
+    window.addEventListener("load", function () {
+      var ok = typeof api !== "undefined" && typeof api.login === "function" && typeof guard === "function";
+      if (!ok) {
+        document.body.innerHTML =
+          '<main style="max-width:560px;margin:2rem auto;padding:0 1rem;font-family:sans-serif">' +
+          '<h1>Setup problem</h1>' +
+          '<p>api.js or main.js did not load, or one of them is an old copy.</p>' +
+          '<p>Replace <b>every</b> file in the project folder with the newest versions, ' +
+          'keep them all in the same folder, then hard refresh (Cmd + Shift + R).</p></main>';
+      }
+    });
+  </script>
+</body>
+</html>

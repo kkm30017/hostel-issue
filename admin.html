@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All issues | Hostel Issue Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">Hostel Issue Tracker</a>
+      <nav id="main-nav" aria-label="Main"></nav>
+    </div>
+  </header>
+
+  <main id="page" hidden>
+    <h1>All hostel issues</h1>
+    <p class="lead" id="welcome"></p>
+
+    <section class="stats" aria-label="Issue counts">
+      <div class="stat open"><strong id="stat-open">0</strong><span>Open</span></div>
+      <div class="stat in-progress"><strong id="stat-progress">0</strong><span>In progress</span></div>
+      <div class="stat resolved"><strong id="stat-resolved">0</strong><span>Resolved</span></div>
+    </section>
+
+    <section class="filters four" aria-label="Search and filters">
+      <div>
+        <label for="search">Search</label>
+        <input type="text" id="search" placeholder="Title, room number or student name">
+      </div>
+      <div>
+        <label for="filter-hostel">Hostel</label>
+        <select id="filter-hostel">
+          <option value="">Both hostels</option>
+          <option value="boys">Boys hostel</option>
+          <option value="girls">Girls hostel</option>
+        </select>
+      </div>
+      <div>
+        <label for="filter-category">Category</label>
+        <select id="filter-category"></select>
+      </div>
+      <div>
+        <label for="filter-status">Status</label>
+        <select id="filter-status">
+          <option value="">All statuses</option>
+          <option value="open">Open</option>
+          <option value="in-progress">In progress</option>
+          <option value="resolved">Resolved</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="issue-list" aria-live="polite">
+      <p class="note">Loading issues...</p>
+    </section>
+
+    <p class="footer-note">Demo data only. <button type="button" class="link-btn dark" id="reset-data">Reset demo data</button></p>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="api.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Safety net: if a script file is missing or is an OLD copy, say so
+    // instead of showing a blank page.
+    window.addEventListener("load", function () {
+      var ok = typeof api !== "undefined" && typeof api.login === "function" && typeof guard === "function";
+      if (!ok) {
+        document.body.innerHTML =
+          '<main style="max-width:560px;margin:2rem auto;padding:0 1rem;font-family:sans-serif">' +
+          '<h1>Setup problem</h1>' +
+          '<p>api.js or main.js did not load, or one of them is an old copy.</p>' +
+          '<p>Replace <b>every</b> file in the project folder with the newest versions, ' +
+          'keep them all in the same folder, then hard refresh (Cmd + Shift + R).</p></main>';
+      }
+    });
+  </script>
+</body>
+</html>
